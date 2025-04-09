@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AddProduct from "./pages/AddProduct";
 
 function App() {
   return (
@@ -21,7 +22,15 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/add-product" element={<AddProduct />} />
+        {/* <Route path="/add-product" element={<AddProduct />} /> */}
+        <Route
+          path="/add-product"
+          element={
+            <ProtectedRoute>
+              <AddProduct />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/edit/:id" element={<EditProduct />} />
       </Routes>
     </BrowserRouter>
