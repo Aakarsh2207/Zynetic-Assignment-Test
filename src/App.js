@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
-import AddProduct from "./pages/AddProduct";
+// import AddProduct from "./pages/AddProduct";
+// import EditProduct from "./pages/EditProduct";
 import EditProduct from "./pages/EditProduct";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AddProduct from "./pages/AddProduct";
@@ -31,7 +32,15 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/edit/:id" element={<EditProduct />} />
+        {/* <Route path="/edit/:id" element={<EditProduct />} /> */}
+        <Route
+          path="/edit-product/:id"
+          element={
+            <ProtectedRoute>
+              <EditProduct />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
