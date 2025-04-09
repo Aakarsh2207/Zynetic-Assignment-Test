@@ -7,6 +7,7 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log({ email, password });
+    localStorage.setItem("token", "mock-jwt-token");
   };
 
   return (
