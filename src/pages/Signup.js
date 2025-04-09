@@ -9,7 +9,6 @@ function Signup() {
   const handleSignup = (e) => {
     e.preventDefault();
     console.log({ email, password });
-    // TODO: integrate backend API
     navigate("/");
   };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 function EditProduct() {
-  const { id } = useParams(); // product ID from URL
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const [form, setForm] = useState({

@@ -22,12 +22,11 @@ function AddProduct() {
 
     const newProduct = {
       ...form,
-      id: Date.now(), // unique ID
+      id: Date.now(),
       price: parseFloat(form.price),
       rating: parseFloat(form.rating),
     };
 
-    // Save to localStorage for demo
     const existing = JSON.parse(localStorage.getItem("products")) || [];
     const updated = [...existing, newProduct];
     localStorage.setItem("products", JSON.stringify(updated));

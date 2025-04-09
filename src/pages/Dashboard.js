@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Initial mock products
 const initialProducts = [
   {
     id: 1,
@@ -36,7 +35,6 @@ function Dashboard() {
   const [categoryFilter, setCategoryFilter] = useState("");
   const [sortOrder, setSortOrder] = useState("");
 
-  // Load from localStorage or use initial defaults
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem("products"));
     if (storedProducts && storedProducts.length > 0) {
@@ -84,7 +82,6 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Filters */}
       <div className="mb-4 flex flex-wrap gap-4 items-center">
         <input type="text" placeholder="Search by name or description" className="border px-3 py-2 rounded w-full md:w-1/3" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
         <select className="border px-3 py-2 rounded w-full md:w-1/4" value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
@@ -99,7 +96,6 @@ function Dashboard() {
         </select>
       </div>
 
-      {/* Product Table */}
       <table className="w-full table-auto border border-collapse">
         <thead>
           <tr className="bg-gray-200">
@@ -116,7 +112,7 @@ function Dashboard() {
               <tr key={product.id}>
                 <td className="border px-4 py-2">{product.name}</td>
                 <td className="border px-4 py-2">{product.category}</td>
-                <td className="border px-4 py-2">${product.price}</td>
+                <td className="border px-4 py-2">Rs. {product.price}</td>
                 <td className="border px-4 py-2">{product.rating}</td>
                 <td className="border px-4 py-2">
                   <button className="text-blue-500 mr-2 hover:underline" onClick={() => navigate(`/edit-product/${product.id}`)}>
